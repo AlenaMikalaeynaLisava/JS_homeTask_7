@@ -30,7 +30,6 @@ Index: 3, element: 103
   /*const numbers = [100, 101, 102, 103];
   let i=0;
   let getErrayElement = setTimeout(function getEl() {
-     //let i=0;
       console.log('Index: ' + i + ', element: ' + numbers[i]);
       i++;
       if(i<numbers.length){
