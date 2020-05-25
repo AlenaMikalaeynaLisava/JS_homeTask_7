@@ -122,7 +122,7 @@ ShowFamily(items);*/
     })
     .catch(errorHandler);*/
 
-    
+ /*Option One   
    let i = 2;
    let j = 1;
 
@@ -151,5 +151,72 @@ ShowFamily(items);*/
     
       console.log(result); 
     
-    }).catch(console.error(i));
+    }).catch(console.error(i));*/
+
+
+  /*Second option*/  
+   let i = 2;
+   let j = 1;
+   
+
+   
+   getSum ()
+   .then(function(response){
+     return double(response);
+   }).then(function(response){
+    return factorial (response);
+   })
+   .then(function(response){
+    return result (response);
+  }).catch(console.error(i));
+
+
+    function getSum (){
+      return new Promise (function (resolve){
+        setTimeout(function (){
+          resolve(i+j);
+        }, 2000);
+
+    });
+  };
+
+
+    function double (getSumResult){
+      return new Promise (function (resolve){
+        setTimeout(function (){
+          resolve(getSumResult*2);
+          alert(getSumResult*2);
+        }, 2000);
+
+    });
+    };
+   
+
+    function factorial(doubleResult) {
+      return new Promise (function (resolve, reject){
+        setTimeout(function (){
+         if(doubleResult != 1){
+           let mult =1;
+           for(k=2; k < doubleResult+1; k++){
+             mult = mult*k;
+           }
+           resolve(mult);
+         } else{
+        resolve(1);}
+
+        }, 2000);
+
+    });   
+
+    };
+
+    function result (factorialResult) {
+      return new Promise (function (){
+        setTimeout(function (){
+         console.log(factorialResult);
+        }, 2000);
+
+    });
+    };
+   
 
