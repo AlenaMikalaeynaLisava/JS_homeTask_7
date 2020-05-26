@@ -195,14 +195,10 @@ ShowFamily(items);*/
     function factorial(doubleResult) {
       return new Promise (function (resolve, reject){
         setTimeout(function (){
-         if(doubleResult != 1){
-           let mult =1;
-           for(k=2; k < doubleResult+1; k++){
-             mult = mult*k;
-           }
-           resolve(mult);
-         } else{
-        resolve(1);}
+         function factorial1(n) {
+            return (n != 1) ? n * factorial1(n - 1) : 1;
+          }
+          resolve (factorial1(doubleResult));
 
         }, 2000);
 
